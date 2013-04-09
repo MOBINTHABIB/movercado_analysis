@@ -1,0 +1,8 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  code:
+    overuse: "Este codigo ja foi utilizado."
+    invalid: "O codigo introduzido e invalido. Verifica o codigo no cartao e tenta de novo."

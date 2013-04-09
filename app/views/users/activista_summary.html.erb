@@ -1,0 +1,25 @@
+<h1>Top Activistas</h1>
+
+<%= link_to '< Previous week', activista_summary_path(:week => @week.advance(:weeks => -1).to_date) %>
+<%= link_to 'Next week >', activista_summary_path(:week => @week.advance(:weeks => 1).to_date) %>
+
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th># of sessions</th>
+    <th>Time of first session</th>
+    <th>Time of last session</th>
+  </tr>
+
+<% @activistas.each do |activista_id, sessions_count| %>
+  <tr>
+    <td><%= activista_id %></td>
+    <td><%= sessions_count %></td>
+    <td><%= User.find(activista_id).first_session_in.created_at %></td>
+    <td><%= User.find(activista_id).last_session_in.created_at %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
